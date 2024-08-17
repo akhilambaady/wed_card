@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Invitation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+            box-sizing: border-box;
+        }
+
+        section {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 40px;
+            position: relative;
+            box-sizing: border-box;
+            background: rgba(0, 0, 0, 0.5); /* Semi-transparent background to blend with content */
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Soft shadow for a lifted effect */
+            overflow: hidden; /* Ensure border styles don't affect content */
+        }
+
+        .carousel img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            animation: fade 12s infinite;
+        }
+
+        .carousel img:nth-child(2) {
+            animation-delay: 4s;
+        }
+
+        .carousel img:nth-child(3) {
+            animation-delay: 8s;
+        }
+
+        @keyframes fade {
+            0% { opacity: 1; }
+            33% { opacity: 0; }
+            66% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .content {
+            position: relative;
+            padding: 20px;
+            border-radius: 10px;
+            z-index: 1;
+            max-width: 90%;
+            margin: auto;
+        }
+
+        .content h1 {
+            font-size: 3rem;
+            margin: 0;
+            font-weight: normal;
+        }
+
+        .content h2 {
+            font-size: 2rem;
+            margin: 10px 0;
+        }
+
+        .content p {
+            font-size: 1rem;
+            margin: 20px 0;
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+            font-size: 1.5rem;
+            flex-wrap: nowrap;
+        }
+
+        .countdown div {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px;
+            border-radius: 5px;
+            min-width: 60px;
+        }
+
+        .navigation {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .navigation .arrow {
+            font-size: 2rem;
+            color: rgba(255, 255, 255, 0.8);
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .navigation .arrow:hover {
+            color: rgba(255, 255, 255, 1);
+        }
+
+        /* Second Page Styling */
+        .second-page .image-container {
+            margin-bottom: 20px;
+            width: 200px;
+            height: 120px; /* Aspect ratio for oval shape */
+            border-radius: 50%;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .second-page .image-container img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+			max-height: 250px;
+        }
+
+        .second-page p {
+            font-size: 1.2rem;
+        }
+
+        .second-page .signature {
+            margin-top: 40px;
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+        }
+
+        /* Maps Container Styling */
+        .maps-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .map {
+            width: 100%;
+            height: 300px;
+            border-radius: 10px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .content h1 {
+                font-size: 2.5rem;
+            }
+
+            .content h2 {
+                font-size: 1.8rem;
+            }
+
+            .countdown {
+                font-size: 1.2rem;
+            }
+
+            .second-page .image-container {
+                width: 150px;
+                height: auto;
+            }
+
+            .maps-container {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 60px 20px;
+            }
+
+            .content {
+                padding: 20px;
+                max-width: 100%;
+            }
+
+            .content h1 {
+                font-size: 2rem;
+            }
+
+            .content h2 {
+                font-size: 1.5rem;
+            }
+
+            .second-page .image-container {
+                width: 100%;
+                height: auto;
+            }
+
+            .maps-container {
+                gap: 15px;
+            }
+
+            .countdown {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .content h1 {
+                font-size: 1.5rem;
+            }
+
+            .content h2 {
+                font-size: 1.2rem;
+            }
+
+            .second-page p, .third-page h2 {
+                font-size: 1rem;
+            }
+
+            .countdown {
+                font-size: 0.8rem;
+            }
+
+            .map {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- First Section -->
+    <section id="firstPage">
+        <div class="carousel">
+            <img src="file:///C:/Users/DELL/Downloads/download%20(4).jpeg" alt="Background Image 1">
+            <img src="file:///C:/Users/DELL/Downloads/download%20(3).jpeg" alt="Background Image 2">
+            <img src="file:///C:/Users/DELL/Downloads/download%20(2).jpeg" alt="Background Image 3">
+        </div>
+        <div class="content">
+            <h1>AMAL & ANUJA</h1>
+            <h2>We Are Getting Married</h2>
+            <p>11 NOVEMBER 2024</p>
+            <p>12:30 for 13:00 | Blessed Sacrament Catholic Church | Semash</p>
+            <div class="countdown">
+                <div><span id="days">00</span> <br> DAYS</div>
+                <div><span id="hours">00</span> <br> HRS</div>
+                <div><span id="minutes">00</span> <br> MIN</div>
+                <div><span id="seconds">00</span> <br> SEC</div>
+            </div>
+            <div class="navigation">
+                <a href="#secondPage" class="arrow">▼</a> <!-- Thick down arrow -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Second Section -->
+    <section id="secondPage" style="background: url('file:///C:/Users/DELL/Downloads/Capture1.jpg') no-repeat center center/cover;">
+        <div class="content second-page">
+            <div class="image-container">
+                <img src="file:///C:/Users/DELL/Downloads/download%20(4).jpeg" alt="Profile Image">
+            </div>
+            <p>We, Arun and Alana begin our life together on Sunday, September 10th, 2023</p>
+            <p>We cordially solicit your blessing and esteemed presence with your family on this auspicious occasion of our marriage.</p>
+            <p>Please join us to celebrate our Engagement on 15th August.</p>
+            <div class="signature">
+                Sincerely,<br>
+                <strong>Arun & Alana</strong>
+            </div>
+            <div class="navigation">
+                <a href="#firstPage" class="arrow">▲</a> <!-- Thick up arrow -->
+                <a href="#thirdPage" class="arrow">▼</a> <!-- Thick down arrow -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Third Section: Google Maps Previews -->
+    <section id="thirdPage" class="third-page" style="background: url('file:///C:/Users/DELL/Downloads/Capture1.jpg') no-repeat center center/cover;">
+        <div class="content">
+            <h2>Wedding & Reception Locations</h2>
+            <div class="maps-container">
+                <!-- Wedding Location -->
+                <div>
+                    <h3>Wedding Location</h3>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.583964399035!2d106.67795681480058!3d10.762622992334994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752929224e57a1%3A0x4d4b65d0dfab03d6!2sCaravelle%20Saigon!5e0!3m2!1sen!2s!4v1628413490285!5m2!1sen!2s"
+                        class="map"
+                        allowfullscreen=""
+                        loading="lazy"></iframe>
+                </div>
+                <!-- Reception Location -->
+                <div>
+                    <h3>Reception Location</h3>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.583964399035!2d106.67795681480058!3d10.762622992334994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752929224e57a1%3A0x4d4b65d0dfab03d6!2sCaravelle%20Saigon!5e0!3m2!1sen!2s!4v1628413490285!5m2!1sen!2s"
+                        class="map"
+                        allowfullscreen=""
+                        loading="lazy"></iframe>
+                </div>
+            </div>
+            <div class="navigation">
+                <a href="#secondPage" class="arrow">▲</a> <!-- Thick up arrow -->
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function updateCountdown() {
+            const weddingDate = new Date("November 11, 2024 13:00:00").getTime();
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = days;
+            document.getElementById('hours').textContent = hours;
+            document.getElementById('minutes').textContent = minutes;
+            document.getElementById('seconds').textContent = seconds;
+
+            if (distance < 0) {
+                clearInterval(interval);
+                document.querySelector('.countdown').textContent = "The Wedding Has Happened!";
+            }
+        }
+
+        const interval = setInterval(updateCountdown, 1000);
+    </script>
+</body>
+</html>
